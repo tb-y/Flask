@@ -162,6 +162,7 @@ def del_task():
     # クッキーから user_id を取得
     id = request.form.get("comment_id")
     id = int(id)
+    comment = request.args.get("comment")
     conn = sqlite3.connect("service.db")
     c = conn.cursor()
     c.execute("delete from bbs where id = ?", (id,))
